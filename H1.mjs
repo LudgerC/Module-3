@@ -1,16 +1,41 @@
+import * as readline from 'node:readline/promises';
+import{stdin as input, stdout as output} from 'node:process';
+const userInput = readline.createInterface({input, output});
 
 
-for(let tellerhoogte = 0; tellerhoogte < 4 ; tellerhoogte ++)
+let hoogte = parseFloat(await userInput.question("Geef een hoogte: "));
+
+for(let i = 0; i <= hoogte; i++)
 {
-for(let breedteller = 0; breedteller < tellerhoogte; breedteller++)
-{
-    process.stdout.write("*");
+    let rij = " ";
+
+    for(let j = 1; j <= hoogte - i; j++)
+    {
+        rij += " ";
+    }
+
+    for(let k = 1; k <=(2 * i - 1); k++)
+    {
+        rij += "*";
+    }
+
+    console.log(rij);
 
 }
-for(let breedteller = 4; breedteller < tellerhoogte; breedteller--)
+for(let i = hoogte - 1; i >= 1; i--)
     {
-        process.stdout.write("*");
+        let rij = " ";
+    
+        for(let j = 1; j <= hoogte - i; j++)
+        {
+            rij += " ";
+        }
+    
+        for(let k = 1; k <=(2 * i - 1); k++)
+        {
+            rij += "*";
+        }
+    
+        console.log(rij);
     
     }
-console.log("*")
-}
