@@ -6,7 +6,7 @@ const userInput = readline.createInterface({ input, output });
 
 for(let teller = 1; teller <= 100; teller++)
 {
-    if(teller % 3 == 0n&& teller % 5 == 0)
+    if(teller % 3 == 0 && teller % 5 == 0)
     {
         console.log(teller + " FizzBuzz");
     }
